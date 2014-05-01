@@ -1,0 +1,84 @@
+* {
+	color: #EEE;
+    text-shadow:1px  1px  1px  #333;
+	font-family: Calibri;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	
+	/* border:1px solid gray; /* only for test */
+}
+body { 
+	/* div標籤 id為container的css */
+	background-color: #71625B;
+	
+	background-repeat: no-repeat;
+	background-image: url(images/background.png);
+	background-attachment: fixed;
+	background-position: 800px bottom; 
+}
+div#container { 
+	width: 800px;
+	margin: 0px auto;
+
+}
+div.article,textarea{
+	border:1px solid #C1C1C1;
+	padding-top: 5px;
+	padding-left: 15px;
+	padding-right: 5px;
+	margin-bottom: 30px;
+	
+	/* 圓角效果 */
+	-webkit-border-top-left-radius: 12px;
+	-webkit-border-bottom-left-radius: 12px;
+	-moz-border-radius-topleft: 12px;
+	-moz-border-radius-bottomleft: 12px;
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
+	
+	/* 背景放大效果 */
+	background-repeat: no-repeat;
+	background-image: url(background.png);
+	background-attachment: fixed;
+	background-position: 750px bottom; 
+	background-size:900px 690px;
+}
+
+div.icon {
+	text-align: right;
+}
+
+textarea {
+	border:1px solid #594A43;
+	background-color:transparent;
+	width: 100%;
+	height: 150px;
+	margin-bottom: 0px;
+}
+
+.button {
+    border-style:none;
+    background-color:#9f9f9f;
+    margin: 10px;
+    width: 100px;
+    height: 25px;
+    font-size: 14px;
+
+    /* 圓角效果 */
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+@media screen and (max-width: 1280px) { /* 低解析度使用者考量 */
+	body { 
+		background-position: 500px bottom;
+	}
+	div.article,textarea {
+		background-position: 450px bottom; 
+	}
+}
