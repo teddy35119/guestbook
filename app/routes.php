@@ -13,5 +13,24 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	$messages = Message::all();
+	
+	return View::make('messages')->with('messages', $messages);;
+});
+
+
+Route::get('addmessage', function()
+{
+	$message = new Message;
+	
+	$message->Content = Input::get('Send');
+	$message->save();
+	return Redirect::to('/');
+});
+
+Route::get('remove/{id}', function($id)
+{
+    $messages = Message::find($id);
+	$messages->delete();
+    return Redirect::to('/');
 });
