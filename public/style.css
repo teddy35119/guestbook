@@ -47,6 +47,12 @@ div.article,textarea{
 
 div.icon {
 	text-align: right;
+	
+}
+div.Trashicon{
+	text-align: right;
+	margin-top: -20px;
+	margin-bottom: 10px;
 }
 
 textarea {
@@ -55,8 +61,13 @@ textarea {
 	width: 100%;
 	height: 150px;
 	margin-bottom: 0px;
+	resize : none;/*關閉可調整*/
 }
-
+.reply{
+	height: 30px;
+	margin-bottom: 5px;
+	display:none;
+}
 .button {
     border-style:none;
     background-color:#9f9f9f;

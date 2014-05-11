@@ -13,24 +13,47 @@
 
 Route::get('/', function()
 {
-	$messages = Message::all();
-	
-	return View::make('messages')->with('messages', $messages);;
+	$data = array();
+	$data['messages'] = Message::all();
+	$data['replys'] = Reply::all();
+	return View::make('messages', $data);
 });
 
+Route::get('jq', function()
+{
+
+	return View::make('jq');
+});
 
 Route::get('addmessage', function()
 {
-	$message = new Message;
+	$messages = new Message;
 	
-	$message->Content = Input::get('Send');
-	$message->save();
+	$messages->Content = Input::get('Send');
+	$messages->save();
 	return Redirect::to('/');
 });
 
-Route::get('remove/{id}', function($id)
+Route::get('remove/{type}/{id}', function($type,$id)
 {
-    $messages = Message::find($id);
-	$messages->delete();
+	if ($type == 'message')
+	{
+		$messages = Message::find($id);
+		$messages->delete();
+	}
+	if ($type == 'reply')
+	{
+		$replys = Reply::find($id);
+		$replys->delete();
+	}
     return Redirect::to('/');
+});
+
+Route::get('reply/{id}', function($id)
+{
+	$replys = new Reply;
+	$replys->FatherId = $id;
+	$replys->ReplyContent = Input::get('ReplySend');
+	$replys->save();
+	return Redirect::to('/');
 });
