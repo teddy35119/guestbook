@@ -17,7 +17,14 @@
 			)
 		});
 	});
-	
+	$(document).ready(function() {
+    $(".reply").keypress(function (e) {
+        if(e.which == 13) {
+         	$('#ReplyForm').submit();
+			e.preventDefault();//避免有停頓
+		}
+    });
+});
 	</script>
 </head>
 <body>

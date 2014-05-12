@@ -19,12 +19,6 @@ Route::get('/', function()
 	return View::make('messages', $data);
 });
 
-Route::get('jq', function()
-{
-
-	return View::make('jq');
-});
-
 Route::get('addmessage', function()
 {
 	$messages = new Message;

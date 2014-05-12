@@ -24,9 +24,8 @@
 			@endif
 			@endforeach
 										
-			<form action="reply/{{ $message->id }}">
+			<form id="ReplyForm" action="reply/{{ $message->id }}">
 					<textarea name ="ReplySend" id="reply{{ $message ->id }}" class='reply'></textarea>
-					<input type="submit" class="button"/>
 			</form>
 		</div>
 	@endforeach

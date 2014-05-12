@@ -54,6 +54,9 @@ div.Trashicon{
 	margin-top: -20px;
 	margin-bottom: 10px;
 }
+div.ReplyInput{
+	display: none;
+}
 
 textarea {
 	border:1px solid #594A43;
@@ -66,7 +69,7 @@ textarea {
 .reply{
 	height: 30px;
 	margin-bottom: 5px;
-	display:none;
+	display: none;
 }
 .button {
     border-style:none;
@@ -84,7 +87,9 @@ textarea {
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
 }
-
+hr{
+	margin-top: 15px;
+}
 @media screen and (max-width: 1280px) { /* 低解析度使用者考量 */
 	body { 
 		background-position: 500px bottom;
